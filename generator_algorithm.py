@@ -2,29 +2,28 @@
 import random
 
 reads= []
-def addingErrorsFunc(seqFragment, percentError):
+def addingErrorsFunc(seqRead, percentError):
     """
     -Input: 
-        1: seqFragment: sequence fragment, type: string
+        1: seqRead: nucleic acid string, type: string
         2: percentError: error rate, type: integer
-    -Functionality: multiple user input error by length of read fragment to generate number of 
-                    errors (errorNum) to use. Generate a list of individual nucleotides from
-                    fragment. Loop through the nucleotides and add errors by replacing them 
-                    using their index.
+    -Functionality: multiple the desired error (percentError) by read size to estimate the number
+                    of  errors to add to the read. Loop through the nucleotides in the read and add 
+                    the estimated errors using indexing.
     -Output: 
-        1: seqFragmentNew: same input genome fragment but with errors, type: string
+        1: newSeqRead: same input nucleic acid string but with errors, type: string
     """
-    errorNum = round(len(seqFragment)*(percentError/100))
+    errorNum = round(len(seqRead)*(percentError/100))
     alphabetNoA = ['T', 'C', 'G']
     alphabetNoT = ['A', 'C', 'G']
     alphabetNoC = ['A', 'G', 'T']
     alphabetNoG = ['A', 'C', 'T']
 
-    fragments= list (seqFragment)
+    fragments= list (seqRead)
     # generate unique (without replacement) random numbers with sample size equal to errorNum 
     # (e.g. 10% of the length of the input fragment). The generated random numbers are within 
     # the range 0 and the length of the input fragment.
-    cps = random.sample(range(0, len(seqFragment)), errorNum)
+    cps = random.sample(range(0, len(seqRead)), errorNum)
     for i  in cps:
         randomACGT= random.randint(0, 3)
         if randomACGT == 3:
@@ -38,22 +37,21 @@ def addingErrorsFunc(seqFragment, percentError):
                 fragments[i] = alphabetNoC[randomACGT]
             else:
                 fragments[i] = alphabetNoG[randomACGT]
-    seqFragmentNew= "".join(fragments)
-    return seqFragmentNew
+    newSeqRead= "".join(fragments)
+    return newSeqRead
 #-------------------------
 def fragmentsGeneratorFunc(genome, readLenMin, readLenMax, errorStatus, errorRate):
     """ 
     -Input: 
         1: genome: refernce genome string, type: string
-        2: readLenMin: smallest read length size, type: integer
-        3: readLenMax: largest read length size, type: integer
-        4: errorStatus: fragment with or without error, string
+        2: readLenMin: smallest read size, type: integer
+        3: readLenMax: largest read size, type: integer
+        4: errorStatus: YES/NO, string
         5: errorRate: error rate, type: integer
-    -Functionality: generate read fragments with/without errors from a refernce genome
+    -Functionality: Generate a list of reads with/without errors from an input nucleic acid string.
     -Output: 
-        1: list of read fragments type: list
+        1: list of reads, type: list
     """
-    
     readLen = random.randint(readLenMin, readLenMax)
     startPos = random.randint(0,len(genome)-readLen)
     read1, read2, read3 = (genome[:startPos],
