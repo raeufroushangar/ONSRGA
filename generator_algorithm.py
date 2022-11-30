@@ -42,15 +42,14 @@ def addingErrorsFunc(seqRead, percentError):
 #-------------------------
 def fragmentsGeneratorFunc(genome, readLenMin, readLenMax, errorStatus, errorRate):
     """ 
-    -Input: 
-        1: genome: refernce genome string, type: string
-        2: readLenMin: smallest read size, type: integer
-        3: readLenMax: largest read size, type: integer
-        4: errorStatus: YES/NO, string
-        5: errorRate: error rate, type: integer
+    -Input:
+         1: genome: refernce genome string, type: string
+         2: readLenMin: smallest read size, type: integer
+         3: readLenMax: largest read size, type: integer
+         5: errorRate: error rate, type: integer
     -Functionality: Generate a list of reads with/without errors from an input nucleic acid string.
     -Output: 
-        1: list of reads, type: list
+          1: list of reads, type: list
     """
     readLen = random.randint(readLenMin, readLenMax)
     startPos = random.randint(0,len(genome)-readLen)
