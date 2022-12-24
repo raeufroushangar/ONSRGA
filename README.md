@@ -1,7 +1,7 @@
 # Algorithm Description:
 
 * **Input/Output:** algorithm takes a string of nucleic acid (i.e.  reference genome) and returns a list of sequence reads according to the hypergeometric probability distribution (i.e. sampling  without replacement). 
-* **Functionality:** algorithm breaks the string (input) into smaller fragments (output) that are within the desired input size (min, max). It will then add errors (substitutions or deletions) to each read to simulate Oxford Nanopore sequencing error rates per read
+* **Functionality:** algorithm breaks the string (input) into smaller fragments (output) that are within the desired input size (min, max). It will then add errors (substitutions or deletions) to each read to simulate Oxford Nanopore sequencing error rates per read.
 
 <img width="2043" alt="Screen Shot 2020-12-15 at 7 57 17 AM" src="https://user-images.githubusercontent.com/39611565/202077013-ec38fb7f-afda-4cfe-955b-2bf43afe927c.png">
 
