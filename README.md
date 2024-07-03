@@ -1,3 +1,8 @@
+
+# ONT-SRGA: Oxford Nanopore Technologies Sequencing Read Generator Algorithm
+
+This algorithm is designed to simulate the generation of sequencing reads from a given reference genome, mimicking the error characteristics typical of Oxford Nanopore sequencing technology.
+
 # Algorithm Description:
 
 * **Input/Output:** algorithm takes a string of nucleic acid (i.e.  reference genome) and returns a list of sequence reads according to the hypergeometric probability distribution (i.e. sampling  without replacement). 
