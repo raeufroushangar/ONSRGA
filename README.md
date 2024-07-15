@@ -1,7 +1,7 @@
 
-# ONTSRGA: Oxford Nanopore Technologies Sequencing Read Generator Algorithm
+# ONSRGA: Oxford Nanopore Sequencing Read Generator Algorithm
 
-This algorithm is designed to simulate the generation of sequencing reads from a given reference genome, mimicking the error characteristics typical of Oxford Nanopore sequencing technology.
+This algorithm is designed to simulate the generation of sequencing reads from a given reference genome, mimicking the error rate characteristics typical of Oxford Nanopore sequencing technology.
 
 # Algorithm Description:
 
